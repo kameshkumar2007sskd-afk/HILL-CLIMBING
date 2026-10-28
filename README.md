@@ -117,6 +117,8 @@ def simple_hill_climbing():
 ```
 ## Output:
 <img width="613" height="555" alt="image" src="https://github.com/user-attachments/assets/93121dcb-80de-4b50-86f3-0312d92c037b" />
+
+
 <img width="558" height="571" alt="image" src="https://github.com/user-attachments/assets/45b6d569-d0d0-409f-a7f2-c402c0d8a499" />
 
 ## Result:
