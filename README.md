@@ -1,6 +1,6 @@
 <h1>ExpNo 5 : Implement Simple Hill Climbing Algorithm</h1> 
-<h3>Name:             </h3>
-<h3>Register Number:             </h3>
+<h3>Name: S Kamesh Kumar </h3>
+<h3>Register Number:  212225220046 </h3>
 <H3>Aim:</H3>
 <p>Implement Simple Hill Climbing Algorithm and Generate a String by Mutating a Single Character at each iteration </p>
 <h2> Theory: </h2>
@@ -59,3 +59,69 @@ Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 0  Solution :  Artificial Intelligence<br>
+
+## Program:
+```
+import random
+import string
+
+
+def generate_random_solution(answer):
+    length = len(answer)
+    return [random.choice(string.printable) for _ in range(length)]
+
+
+def evaluate(solution, answer):
+    target = list(answer)
+    diff = 0
+
+    for i in range(len(target)):
+        s = solution[i]
+        t = target[i]
+
+        # Calculate the ASCII difference between characters
+        diff += abs(ord(s) - ord(t))
+
+    return diff
+
+
+def mutate_solution(solution):
+    index = random.randint(0, len(solution) - 1)
+    solution[index] = random.choice(string.printable)
+    return solution
+
+
+def simple_hill_climbing():
+    answer = "Artificial Intelligence"
+
+    # Generate initial random solution
+    best = generate_random_solution(answer)
+    best_score = evaluate(best, answer)
+
+    while True:
+        print("Score:", best_score, "Solution:", "".join(best))
+
+        # Stop when the solution matches the answer
+        if best_score == 0:
+            break
+
+        # Create a new solution by changing one character
+        new_solution = mutate_solution(list(best))
+        score = evaluate(new_solution, answer)
+
+
+        if score < best_score:
+            best = new_solution
+            best_score = score
+
+```
+## Output:
+<img width="613" height="555" alt="image" src="https://github.com/user-attachments/assets/93121dcb-80de-4b50-86f3-0312d92c037b" />
+<img width="558" height="571" alt="image" src="https://github.com/user-attachments/assets/45b6d569-d0d0-409f-a7f2-c402c0d8a499" />
+
+## Result:
+Thus the Implementation of Simple Hill Climbing Algorithm is implemented successfully
+
+
+
+
